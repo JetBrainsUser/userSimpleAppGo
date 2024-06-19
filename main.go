@@ -38,10 +38,13 @@ func (p *Person) IsAdult() bool {
 
 func main() {
 	person := Person{Name: "John Doe", Age: 25, Address: []string{"123 Main St", "Anytown", "NY"}}
+	PrintAdultStatus(person)
+}
 
-	if person.IsAdult() {
-		fmt.Printf("%s is an adult.\n", person.Name)
-	} else {
-		fmt.Printf("%s is not an adult.\n", person.Name)
+func PrintAdultStatus(person Person) {
+	message := fmt.Sprintf("%s is an adult.\n", person.Name)
+	if !person.IsAdult() {
+		message = fmt.Sprintf("%s is not an adult.\n", person.Name)
 	}
+	fmt.Print(message)
 }
