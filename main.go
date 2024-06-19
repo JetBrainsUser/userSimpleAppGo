@@ -5,19 +5,19 @@ import (
 )
 
 type Person struct {
-	Name    string
-	Age     int
-	Address []string
+	Name      string
+	Age       int
+	Addresses []Address
 }
 
-type Location struct {
+type Address struct {
 	Street string
 	City   string
 	State  string
 }
 
 func (p *Person) DisplayDetails() {
-	fmt.Printf("Name: %s, Age: %d, City: %s\n", p.Name, p.Age, p.Address[1])
+	fmt.Printf("Name: %s, Age: %d, City: %s\n", p.Name, p.Age, p.Addresses[1])
 }
 
 func (p *Person) CelebrateBirthday() {
@@ -30,7 +30,7 @@ func (p *Person) IsAdult() bool {
 }
 
 func main() {
-	person := Person{Name: "John Doe", Age: 25, Address: []string{"123 Main St", "Anytown", "NY"}}
+	person := Person{Name: "John Doe", Age: 25, Addresses: []Address{}}
 
 	person.DisplayDetails()
 
