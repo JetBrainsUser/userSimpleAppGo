@@ -7,6 +7,8 @@ import (
 type Person struct {
 	Name    string
 	Age     int
+	Phone   string
+	Email   string
 	Address []Location
 }
 
@@ -22,7 +24,7 @@ const (
 )
 
 func main() {
-	person := Person{Name: "John Doe", Age: 25, Address: []Location{{Street: "123 Main St", City: "Anytown", State: "NY"}}}
+	person := Person{Name: "John Doe", Age: 25, Phone: "123-456-7890", Email: "john.doe@example.com", Address: []Location{{Street: "123 Main St", City: "Anytown", State: "NY"}}}
 	if person.IsAdult() {
 		fmt.Printf("%s is an adult.\n", person.Name)
 	} else {
@@ -32,7 +34,7 @@ func main() {
 }
 
 func (p *Person) PrintPersonDetails() {
-	fmt.Printf("Name: %s, Age: %d, City: %s\n", p.Name, p.Age, p.Address[defaultCityIndex].City)
+	fmt.Printf("Name: %s, Age: %d, Phone: %s, Email: %s, City: %s\n", p.Name, p.Age, p.Phone, p.Email, p.Address[defaultCityIndex].City)
 }
 
 func (p *Person) CelebrateBirthday() {
