@@ -16,15 +16,8 @@ type Location struct {
 	State  string
 }
 
-const detailsFormat = "Name: %s, Age: %d, City: %s\n"
-
-func (p *Person) displayCity() string {
-	return p.Address[1]
-}
-
 func (p *Person) DisplayDetails() {
-	city := p.displayCity()
-	fmt.Printf(detailsFormat, p.Name, p.Age, city)
+	fmt.Printf("Name: %s, Age: %d, City: %s\n", p.Name, p.Age, p.Address[1])
 }
 
 func (p *Person) CelebrateBirthday() {
