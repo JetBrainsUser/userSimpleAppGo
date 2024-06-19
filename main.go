@@ -21,19 +21,23 @@ func (p *Person) PrintDetails() {
 	fmt.Printf("Name: %s, Age: %d, City: %s\n", p.Name, p.Age, city)
 }
 
-func (p *Person) CelebrateBirthday() {
-	p.Age += 1
+const ageOfAdulthood = 18
+
+func (p *Person) celebrateBirthday() {
+	p.incrementAge()
 	fmt.Printf("Happy Birthday %s! You are now %d years old.\n", p.Name, p.Age)
 }
 
+func (p *Person) incrementAge() {
+	p.Age += 1
+}
+
 func (p *Person) IsAdult() bool {
-	return p.Age >= 18
+	return p.Age >= ageOfAdulthood
 }
 
 func main() {
 	person := Person{Name: "John Doe", Age: 25, Address: []string{"123 Main St", "Anytown", "NY"}}
-
-	person.CelebrateBirthday()
 
 	if person.IsAdult() {
 		fmt.Printf("%s is an adult.\n", person.Name)
