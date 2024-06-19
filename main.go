@@ -16,9 +16,11 @@ type Location struct {
 	State  string
 }
 
-func (p *Person) PrintDetails() {
-	city := p.Address[1]
-	fmt.Printf("Name: %s, Age: %d, City: %s\n", p.Name, p.Age, city)
+const cityIndex = 1
+
+func (person *Person) PrintDetails() {
+	cityName := person.Address[cityIndex]
+	fmt.Printf("Name: %s, Age: %d, City: %s\n", person.Name, person.Age, cityName)
 }
 
 const ageOfAdulthood = 18
